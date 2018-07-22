@@ -43,7 +43,7 @@ def get_internet_archive():
     snapshots = dict()
     for x in range(1, len(websites)):
         # for req in request_list:
-            for i in range(1,len(timestamps)):
+            for i in range(1, len(timestamps)):
                 req = 'http://archive.org/wayback/available?url='+websites[x]+'/&timestamp='+timestamps[i]+'14045636'
                 # source_website = re.findall("((http:|https:)//[^ \<]*[^ \<\.])", line)
                 r = requests.get(req, verify=False)

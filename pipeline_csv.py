@@ -35,7 +35,7 @@ from sklearn.feature_extraction.text import TfidfTransformer
 
 
 def prepare_data():
-    headlines = pd.read_csv('labeled_headlines.csv')
+    headlines = pd.read_csv('data/labeled_headlines.csv')
     headlines.columns = ['headline', 'label']
     headlines = pipeline_csv(headlines)
     return headlines

@@ -180,17 +180,17 @@ def train_test_data():
     # df.head()
     #
     # df2 = df[['headline', 'label']]
-    # df2.to_csv('labeled_news_headlines.csv', mode='a', encoding='utf-8', index=False)
+    # df2.to_csv('data/labeled_news_headlines.csv', mode='a', encoding='utf-8', index=False)
 
     # results = pd.DataFrame([])
-    # first_csv = pd.read_csv('labeled_politcs_headlines.csv', encoding='utf-8')
-    # second_csv = pd.read_csv('labeled_news_headlines.csv', encoding='utf-8')
+    # first_csv = pd.read_csv('data/labeled_politcs_headlines.csv', encoding='utf-8')
+    # second_csv = pd.read_csv('data/labeled_news_headlines.csv', encoding='utf-8')
     # results = results.append(first_csv)
     # results = results.append(second_csv)
-    # results.to_csv('labeled_headlines.csv')
+    # results.to_csv('data/labeled_headlines.csv')
 
 def load_labeled_data(df):
-    df = pd.read_csv('labeled_headlines.csv', encoding='utf-8')
+    df = pd.read_csv('data/labeled_headlines.csv', encoding='utf-8')
     print(df.head())
     df = df[df.label != 0] #afairesi twn neutral eidisewn
     # print(df.label.value_counts())
