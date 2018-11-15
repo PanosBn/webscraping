@@ -127,7 +127,7 @@ def train_test_data():
         pol_score = analyser.polarity_scores(line)
         pol_score['headline'] = line
         results.append(pol_score)
-
+    
     pprint(results[:5])
     df = pd.DataFrame.from_records(results)
     print(df.head())
@@ -228,7 +228,7 @@ def prepare_training_data(df):
     # testing me kainourgio external keimeno
     # s1 = ("Senate panel moving ahead with Mueller bill despite McConnell opposition", " 1")
     # headline_test_vector = vect.transform([s1])
-    # prediction = mbayes.predict(headline_test_vector.toarray())
+    # prediction = mbayes.predict(headline_test_vector.toarray()
     # print(prediction)
 
     print("Accuracy: {:.4f}%".format(accuracy_score(label_test, prediction) * 100))

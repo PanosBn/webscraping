@@ -1,0 +1,70 @@
+body {
+    font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight: 300;
+}
+
+#middle-section-info {
+    padding: 30px 0px 15px 0px;
+}
+
+#hero-header {
+    background-color: rgba(100, 131, 129, 1);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+}
+
+#middle-section {
+    background-color: rgba(217, 215, 221, 1);
+}
+
+#middle-chart{
+    background-color: rgba(217, 215, 221, 1);
+}
+
+#tile1 {
+    background-color: rgba(255, 191, 70, 1);
+}
+
+#tile2 {
+    background-color: rgba(138, 203, 136, 1);
+}
+
+#tile3 {
+    background-color: rgba(217, 215, 221, 1);
+}
+
+.img {
+    bottom: 0;
+    left: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    opacity: 1;
+    display: block;
+    transition: .5s ease;
+    backface-visibility: hidden;
+}
+
+.middle {
+    transition: .5s ease;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.image-wrapper:hover {
+    opacity: 0.3;
+    background-color: rgba(100, 131, 129, 1);
+}
+
+.image-wrapper:hover .middle {
+    opacity: 1;
+}
+
+footer {
+    height: 5rem;
+}

@@ -100,6 +100,8 @@ def create_models(headlines):
     label = headlines['label']
     arr_Accu = []
 
+    results = dict()
+
     for i in range(1, 20):
         headline_train, headline_test, label_train, label_test = train_test_split(headline, label, test_size=0.10, random_state=i)
         vect = CountVectorizer(max_features=1000, binary=True)
@@ -107,10 +109,10 @@ def create_models(headlines):
         headline_test_vector = vect.transform(headline_test)
 
         # Note: Egine prospatheia balancing tou dataset alla to accuracy sti sunexeia twn dokimwn apo katw den veltiwthike
-        balancing = SMOTE()
-        headline_train_balanced, label_train_balanced = balancing.fit_sample(headline_train_vector, label_train)
-        oversampled_headlines, counts = np.unique(label_train_balanced, return_counts=True)
-        print(list(zip(oversampled_headlines, counts)))
+        # balancing = SMOTE()
+        # headline_train_balanced, label_train_balanced = balancing.fit_sample(headline_train_vector, label_train)
+        # oversampled_headlines, counts = np.unique(label_train_balanced, return_counts=True)
+        # print(list(zip(oversampled_headlines, counts)))
 
         dummy = DummyClassifier()
         dummy.fit(headline_train_vector, label_train)
@@ -162,13 +164,16 @@ def create_models(headlines):
     prediction = mbayes.predict(headline_test_vector)
     # print(prediction)
     accuracy = metrics.accuracy_score(label_test, prediction)
-    print('MBayes Accuracy : ', accuracy)
+    #print('MBayes Accuracy : ', accuracy)
+    results["bayes_accuracy"] = accuracy
 
     log_regression = LogisticRegression()
     log_regression.fit(headline_train_vector, label_train)
     prediction = log_regression.predict(headline_test_vector)
     accuracy = metrics.accuracy_score(label_test, prediction)
     print('LogisticRegression Accuracy : ', accuracy)
+
+    results["Logistic_regression"] = accuracy
 
     decision_tree = DecisionTreeClassifier(criterion='entropy')
     decision_tree.fit(headline_train_vector, label_train)
@@ -205,6 +210,7 @@ def create_models(headlines):
     # prediction = passive_aggressive.predict(headline_test_vector)
     # accuracy = metrics.accuracy_score(label_test, prediction)
     # print('PassiveAggressiveClassifier Accuracy : ', accuracy)
+    return results
 
 if __name__ == '__main__':
 

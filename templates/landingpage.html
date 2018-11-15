@@ -1,0 +1,237 @@
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Uni of Aegean: Thesis - Sentiment Analysis - Banos Panagiotis </title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.2/css/bulma.min.css">
+    <link rel="stylesheet" href="main.css">
+    <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+</head>
+
+<body>
+<!--Header-->
+<section id="hero-header" class="hero is-primary">
+    <div class="hero-body">
+        <div class="container has-text-left">
+            <h1 class="title">
+                Πανεπιστήμιο Αιγαίου-Διπλωματική εργασία
+            </h1>
+            <h2 class="subtitle">
+                Sentiment Analysis ειδησεογραφικών επικεφαλίδων
+            </h2>
+        </div>
+    </div>
+    <div class="hero-foot">
+        <div class="container has-text-centered">
+            <nav class="navbar">
+                <div class="container">
+                    <div id="navbarMenuHeroA" class="navbar-menu">
+                        <div class="navbar-end">
+                            <a class=" navbar-item ">
+                                About
+                            </a>
+                            <span class="navbar-item">
+                                  <a class="button is-primary">
+                                    <span class="icon">
+                                      <i class="fab fa-github"></i>
+                                    </span>
+                                    <span>Github</span>
+                                  </a>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </div>
+</section>
+<!--End of Header-->
+
+<!--Main Content-->
+
+<div id="middle-section" class="section is-medium is-white">
+    <div id="news-section" class="container is-narrow ">
+        <div id="news-section-title" class=" column is-narrow is-offset-1 has-text-centered">
+            <p class="title is-size-3-desktop is-size-4-mobile">Ειδησεογραφικες ιστοσελίδες</p>
+            <p class="subtitle is-size-6-desktop is-size-7-mobile"> Επιλέξτε μία από της παρακάτω ιστοσελίδες και δείτε την ιστορική εξέλιξη του συναισθήματος στο διάστημα
+                1998-2018 </p>
+        </div>
+        <div class="columns is-gapless is-multiline is-mobile ">
+            <div class="column is-variable is-12-mobile is-half-tablet is-4-desktop">
+                <div class="image-wrapper">
+                    <figure class="image container is-128x128">
+                        <img class="img" src="/webscraping/assets/bbc.png">
+                        <div class="middle">
+                            <a class="button is-primary is-active" value="bbc">Προβολή</a>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+            <div class="column is-variable is-12-mobile is-half-tablet is-4-desktop">
+                <div class="image-wrapper">
+                    <figure class="image container is-128x128">
+                        <img class="img" src="/webscraping/assets/economist.png">
+                        <div class="middle">
+                            <a class="button is-primary is-active" value="econ">Προβολή</a>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+            <div class="column is-variable is-12-mobile is-half-tablet is-4-desktop">
+                <div class="image-wrapper">
+                    <figure class="image container is-128x128">
+                        <img class="img" src="/webscraping/assets/guardian.png">
+                        <div class="middle">
+                            <a class="button is-primary is-active" value="guardian">Προβολή</a>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+            <div class="column is-variable is-12-mobile is-half-tablet is-4-desktop">
+                <div class="image-wrapper">
+                    <figure class="image container is-128x128">
+                        <img class="img" src="/webscraping/assets/independent.png">
+                        <div class="middle">
+                            <a class="button is-primary is-active" value="indep">Προβολή</a>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+            <div class="column is-variable is-12-mobile is-half-tablet is-4-desktop">
+                <div class="image-wrapper">
+                    <figure class="image container is-128x128">
+                        <img class="img" src="/webscraping/assets/nyt.png">
+                        <div class="middle">
+                            <a class="button is-primary is-active" value="nyt">Προβολή</a>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+            <div class="column is-variable is-12-mobile is-half-tablet is-4-desktop">
+                <div class="image-wrapper">
+                    <figure class="image container is-128x128">
+                        <img class="img" src="/webscraping/assets/times.png">
+                        <div class="middle">
+                            <a class="button is-primary is-active" value="times">Προβολή</a>
+                        </div>
+                    </figure>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="chart-section" class="section is-medium is-white">
+    <div class="container is-narrow">
+        <div class="column is-variable is-12-mobile is-half-tablet is-4-desktop">
+            <div class="image-wrapper">
+                <figure class="image container is-128x128">
+                    <img class="img" src="/webscraping/assets/times.png">
+                    <div class="middle">
+                        <a class="button is-primary is-active" value="times">Προβολή</a>
+                    </div>
+                </figure>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="chart_div" class="container is-narrow"></div>
+
+
+<div id="middle-section-info" class="container is-narrow ">
+    <div class="tile is-ancestor">
+        <div class="tile is-4 is-vertical is-parent">
+            <div id="tile1" class="tile is-child box">
+                <p class="heading">Τίτλοι Ειδησεων</p>
+                <p class="title">2,511</p>
+                <p class="heading">Θετικοι</p>
+                <p class="title">1,506</p>
+                <p class="heading">Αρνητικοι</p>
+                <p class="title">1,005</p>
+            </div>
+            <div id="tile2" class="tile is-child box">
+                <p class="title"></p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dignissimos distinctio esse nesciunt repellendus sed voluptas? Hic ipsa laudantium praesentium
+                    repellendus?.</p>
+            </div>
+        </div>
+        <div class="tile is-parent">
+            <div id="tile3" class="tile is-child box">
+                <p class="title">Γνωρίζατε ότι</p>
+                <p>Sentiment essentially relates to feelings; attitudes, emotions and opinions. Sentiment Analysis refers to the practice of applying Natural Language
+                    Processing and Text Analysis techniques to identify and extract subjective information from a piece of text. A person’s opinion or feelings are for the most
+                    part
+                    subjective and not facts. Which means to accurately analyze an individual’s opinion
+                    or mood from a piece of text can be extremely difficult. With Sentiment Analysis from a text analytics point of view,
+                    we are essentially looking to get an understanding of the attitude of a writer with respect to a topic in a piece of text and its polarity; whether it’s
+                    positive, negative or neutral.
+                    .</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--Main Content End-->
+
+<footer class="footer">
+    <div class="content has-text-centered">
+        <p>
+            <strong>Διπλωματική Εργασία</strong> by Παναγιώτης Μπάνος, 2018
+        </p>
+    </div>
+</footer>
+
+
+<script>
+
+    $(document).ready(function () {
+
+        google.charts.load('current', {packages: ['corechart']});
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var data = google.visualization.arrayToDataTable([
+                ['Έτος', 'Θετικές', 'Αρνητικές'],
+                ['2006', 450, 410],
+                ['2007', 421, 653],
+                ['2008', 235, 389],
+                ['2009', 241, 540],
+                ['2010', 401, 355],
+                ['2011', 470, 220],
+                ['2012', 660, 1120],
+                ['2013', 560, 310],
+                ['2014', 456, 322],
+                ['2015', 150, 460],
+                ['2016', 597, 742],
+                ['2017', 467, 501]
+            ]);
+
+            var options = {
+                title: 'Sentiment',
+                height: 400,
+                hAxis: {title: "Χρονιά", titleTextStyle: {color: '#333'}},
+                vAxis: {minValue: 0}
+            };
+
+            $('#chart-section').hide();
+            $('.button').click(function () {
+                var btnVal = $(this).attr('value');
+//                alert(btnVal + " was clicked.");
+//                $('#chart-section').show();
+                console.log(btnVal);
+                var chart = new google.visualization.AreaChart(document.getElementById('chart_div'));
+                chart.draw(data, options);
+            });
+
+        }
+    });
+
+</script>
+</body>
+</html>
+
